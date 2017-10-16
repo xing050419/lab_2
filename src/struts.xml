@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+  <package name="default" extends="struts-default">
+    <action name="index">
+      <result>index.jsp</result>
+    </action>
+  
+    <action name="manage" class="ManageAction" method="execute">
+      <result name="success">manage.jsp</result>
+    </action>
+    
+    <action name="friend">
+      <result>friends.jsp</result>
+    </action>
+    
+    <action name="detail" class="DetailAction" method="execute">
+      <result name="success">detail.jsp</result>
+    </action>
+    
+    <action name="addrequest">
+      <result>addbook.jsp</result>
+    </action>
+    
+    <action name="addbook" class="AddBookAction" method="execute">
+      <result name="finished">addbook.jsp</result>
+      <result name="unfinished">addauthor.jsp</result>
+    </action>
+    
+    <action name="addauthor" class="AddAuthorAction" method="execute">
+      <result name="success">addbook.jsp</result>
+    </action>
+    
+    <action name="remove" class="RemoveAction" method="execute">
+      <result type="redirect">${requestUrl}</result>
+    </action>
+    
+    <action name="updaterequest" class="UpdateRequestAction">
+      <result>update.jsp</result>
+    </action>
+    
+    <action name="searchbookrequest">
+      <result>searchbook.jsp</result>
+    </action>
+    
+    <action name="searchauthorrequest">
+      <result>searchauthor.jsp</result>
+    </action>
+    
+    <action name="update" class="UpdateAction">
+      <result name="finished">manage.jsp</result>
+      <result name="unfinished">addauthor.jsp</result>
+    </action>
+    
+    <action name="updateaddauthor" class="UpdateAddAuthorAction" method="execute">
+      <result name="success">manage.jsp</result>
+    </action>
+    
+    <action name="searchbook" class="SearchBookAction" method="execute">
+      <result name="success">searchbookresult.jsp</result>
+      <result name="fail">searchbookfail.jsp</result>
+    </action>
+    
+    <action name="searchauthor" class="SearchAuthorAction" method="execute">
+      <result name="success">searchauthorresult.jsp</result>
+      <result name="fail">searchauthorfail.jsp</result>
+    </action>
+  </package>
+</struts>
